@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../providers/AuthProviders';
 
 const Login = () => {
+    //Create a destructured object for use context data using useContext and pass the context name under useContext. Ex: 👇
     const { loginUser } = useContext(UserContext);
 
     const handleLogin = event => {
@@ -19,6 +20,7 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message)
             })
+        event.reset;
     }
     return (
         <div className="hero min-h-screen bg-base-200">
